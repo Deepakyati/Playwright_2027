@@ -1,0 +1,71 @@
+{
+  "validUsers": [
+    {
+      "username": "standard_user",
+      "password": "secret_sauce",
+      "expectedResult": "success",
+      "description": "Standard user with full access"
+    },
+    {
+      "username": "performance_glitch_user",
+      "password": "secret_sauce",
+      "expectedResult": "success",
+      "description": "User with performance issues"
+    },
+    {
+      "username": "error_user",
+      "password": "secret_sauce",
+      "expectedResult": "success",
+      "description": "User that generates errors"
+    },
+    {
+      "username": "visual_user",
+      "password": "secret_sauce",
+      "expectedResult": "success",
+      "description": "User for visual testing"
+    }
+  ],
+  "invalidUsers": [
+    {
+      "username": "locked_out_user",
+      "password": "secret_sauce",
+      "expectedResult": "failure",
+      "expectedError": "Epic sadface: Sorry, this user has been locked out.",
+      "description": "Locked out user should fail login"
+    },
+    {
+      "username": "problem_user",
+      "password": "secret_sauce",
+      "expectedResult": "success",
+      "description": "User with image loading problems"
+    },
+    {
+      "username": "invalid_user",
+      "password": "secret_sauce",
+      "expectedResult": "failure",
+      "expectedError": "Epic sadface: Username and password do not match any user in this service",
+      "description": "Invalid username should fail"
+    },
+    {
+      "username": "standard_user",
+      "password": "wrong_password",
+      "expectedResult": "failure",
+      "expectedError": "Epic sadface: Username and password do not match any user in this service",
+      "description": "Invalid password should fail"
+    },
+    {
+      "username": "",
+      "password": "secret_sauce",
+      "expectedResult": "failure",
+      "expectedError": "Epic sadface: Username is required",
+      "description": "Empty username should fail"
+    },
+    {
+      "username": "standard_user",
+      "password": "",
+      "expectedResult": "failure",
+      "expectedError": "Epic sadface: Password is required",
+      "description": "Empty password should fail"
+    }
+  ]
+}
